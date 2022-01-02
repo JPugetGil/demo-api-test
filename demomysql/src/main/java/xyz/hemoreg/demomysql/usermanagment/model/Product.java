@@ -12,7 +12,7 @@ import javax.persistence.Id;
 @Entity
 public class Product {
     @Id
-    private int id;
+    private long id;
     private String name;
     private double price;
 

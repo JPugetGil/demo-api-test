@@ -2,7 +2,6 @@ package xyz.hemoreg.demomysql.usermanagment.model;
 
 import lombok.Getter;
 import lombok.Setter;
-import xyz.hemoreg.demomysql.usermanagment.dto.ProductDTO;
 import xyz.hemoreg.demomysql.usermanagment.dto.ClientDTO;
 
 import javax.persistence.*;
@@ -13,7 +12,7 @@ import javax.persistence.*;
 public class Client {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private long id;
 
     private String name;
 

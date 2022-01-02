@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 import xyz.hemoreg.demopostgresql.usermanagment.dto.ProductDTO;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -12,7 +13,8 @@ import javax.persistence.Id;
 @Entity
 public class Product {
     @Id
-    private int id;
+    @Column(nullable = false)
+    private long id;
     private String name;
     private double price;
 
