@@ -21,7 +21,7 @@ tags:
   - [GET all products](http://localhost:8081/products) 
   - [GET by id](http://localhost:8081/products/{id})
 - Client :
-  - [GET all products](http://localhost:8081/clients)
+  - [GET all clients](http://localhost:8081/clients)
   - [GET by id](http://localhost:8081/clients/{id})
 
 ### Database
