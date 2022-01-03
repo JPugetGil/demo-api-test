@@ -23,8 +23,8 @@ public class ClientController {
         return clientService.getClients();
     }
 
-    @GetMapping(path= "{id}")
-    public ClientDTO getClientById(@PathVariable Integer id) {
+    @GetMapping(path= "/{id}")
+    public ClientDTO getClientById(@PathVariable Long id) {
         return clientService.getClientById(id);
     }
 }

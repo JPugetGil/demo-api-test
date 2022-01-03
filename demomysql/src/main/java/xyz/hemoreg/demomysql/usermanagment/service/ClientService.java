@@ -27,7 +27,7 @@ public class ClientService {
                 .collect(Collectors.toList());
     }
 
-    public ClientDTO getClientById(Integer id) {
+    public ClientDTO getClientById(Long id) {
         return clientRepository
                 .getById(id)
                 .toClientDTO();

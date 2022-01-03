@@ -9,8 +9,24 @@ tags:
 =================
 
 ## With PostgreSQL + Java + Gatling
-### Localhost
+### Installation
+- Java 11 or more
+- Maven
+
+### Run
+- `mvn spring-boot:run`
+
+### Endpoints available
+- Product :
+  - [GET all products](http://localhost:8081/products) 
+  - [GET by id](http://localhost:8081/products/{id})
+- Client :
+  - [GET all products](http://localhost:8081/clients)
+  - [GET by id](http://localhost:8081/clients/{id})
+
+### Database
+#### Localhost
 - [Docker-compose file](docker-compose.yml)
 
-### Online
+#### Online
 - 1 GB / 10 GB Disk / FRANK1 - PostgreSQL 13

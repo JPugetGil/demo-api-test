@@ -24,7 +24,7 @@ public class ProductService {
                 .collect(Collectors.toList());
     }
 
-    public ProductDTO getProductById(Integer id) {
+    public ProductDTO getProductById(Long id) {
         return productRepository
                 .getById(id)
                 .toProductDTO();
