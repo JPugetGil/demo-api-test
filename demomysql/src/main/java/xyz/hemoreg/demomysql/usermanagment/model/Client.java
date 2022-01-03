@@ -16,7 +16,6 @@ public class Client {
 
     private String name;
 
-    @Column(unique = true, nullable = false)
     private String email;
 
     private int age;
