@@ -47,6 +47,6 @@ public class ClientDTO {
 
     @Override
     public String toString() {
-        return '(' + id + ',' + age + ",'" + email + "','" + name + "')";
+        return "(" + id + ',' + age + ",'" + email + "','" + name + "')";
     }
 }

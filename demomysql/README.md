@@ -38,3 +38,5 @@ tags:
 - Execute the test :
   - Run [the Engine class](src/test/scala/Engine.scala) with scala
   - Give your test a description inside the terminal
+
+The full result can be found inside the [gatling target index file](target/gatling/testapisimulation-.../index.html)
