@@ -26,7 +26,7 @@ tags:
 
 ### Database
 #### Localhost
-- [Docker-compose file](docker-compose.yml)
+- [Docker-compose file](../docker-compose.yml)
 
 #### Online
 - 1 GB / 10 GB Disk / FRANK1 - MySQL 8

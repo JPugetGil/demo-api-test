@@ -10,11 +10,13 @@ public class ClientDTO {
     private String name;
     private String email;
     private int age;
+    private String adresse;
 
-    public ClientDTO(long id, String name, String email, int age) {
+    public ClientDTO(long id, String name, String email, int age, String adresse) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.age = age;
+        this.adresse = adresse;
     }
 }

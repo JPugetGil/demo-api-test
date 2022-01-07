@@ -5,6 +5,7 @@ public class ClientDTO {
     private String name;
     private String email;
     private int age;
+    private String adresse;
 
     public long getId() {
         return id;
@@ -38,15 +39,22 @@ public class ClientDTO {
         this.age = age;
     }
 
-    public ClientDTO(long id, String name, String email, int age) {
+    public String getAdresse() { return adresse; }
+
+    public void setAdresse(String adresse) {
+        this.adresse = adresse;
+    }
+
+    public ClientDTO(long id, String name, String email, int age, String adresse) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.age = age;
+        this.adresse = adresse;
     }
 
     @Override
     public String toString() {
-        return "(" + id + ',' + age + ",'" + email + "','" + name + "')";
+        return "(" + id + ',' + age + ",'" + email + "','" + name + "','" + adresse + "')";
     }
 }

@@ -1,0 +1,64 @@
+version: '3.9'
+
+services:
+  postgres:
+    image: postgres:latest
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: springuser
+      POSTGRES_PASSWORD: ThePassword
+      POSTGRES_DB: db_postgres
+    volumes:
+      - ./demopostgresql/dataPostgreSQL:/var/lib/dataPostgreSQL
+    restart: always
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U postgres" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  mysql:
+    image: mysql:latest
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_USER: springuser
+      MYSQL_PASSWORD: ThePassword
+      MYSQL_DATABASE: db_mysql
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_HOST: localhost
+    volumes:
+      - ./demomysql/dataMySQL:/var/lib/mysql
+    restart: always
+
+  data-generator:
+    build:
+      context: ./data-generator
+      dockerfile: Dockerfile
+    ports:
+      - "8082:8082"
+    volumes:
+      - ./data:/data
+
+  demopostgres:
+    depends_on:
+      postgres:
+        condition: service_healthy
+    build:
+      context: ./demopostgresql
+      dockerfile: Dockerfile
+    ports:
+      - "8081:8081"
+
+  demomysql:
+    depends_on:
+      - mysql
+    build:
+      context: ./demomysql
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+
+volumes:
+  data:

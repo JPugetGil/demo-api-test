@@ -20,7 +20,9 @@ public class Client {
 
     private int age;
 
+    private String adresse;
+
     public ClientDTO toClientDTO() {
-        return new ClientDTO(id, name, email, age);
+        return new ClientDTO(id, name, email, age, adresse);
     }
 }

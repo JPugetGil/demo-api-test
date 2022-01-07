@@ -4,11 +4,21 @@ public class ProductDTO {
     private long id;
     private String name;
     private double price;
+    private String model;
 
-    public ProductDTO(long id, String name, double price) {
+    public ProductDTO(long id, String name, double price, String model) {
         this.id = id;
         this.name = name;
         this.price = price;
+        this.model = model;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
     }
 
     public long getId() {
@@ -37,6 +47,6 @@ public class ProductDTO {
 
     @Override
     public String toString() {
-        return "(" + id + ",'" + name + "'," + price + ')';
+        return "(" + id + ",'" + name + "'," + price + ",'" + model + "')";
     }
 }

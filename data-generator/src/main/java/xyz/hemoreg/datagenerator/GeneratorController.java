@@ -16,21 +16,21 @@ public class GeneratorController {
 
     @GetMapping("/products/{quantite}")
     public void genererSetProduits(@PathVariable("quantite") int quantite) throws IOException {
-        BufferedWriter writer = new BufferedWriter(new FileWriter("product-data.sql", true));
+        BufferedWriter writer = new BufferedWriter(new FileWriter("/data/product-data.sql", true));
         generateAndWriteProducts(quantite, writer);
         writer.close();
     }
 
     @GetMapping("/clients/{quantite}")
     public void genererSetClients(@PathVariable("quantite") int quantite) throws IOException {
-        BufferedWriter writer = new BufferedWriter(new FileWriter("client-data.sql", true));
+        BufferedWriter writer = new BufferedWriter(new FileWriter("/data/client-data.sql", true));
         generateAndWriteClients(quantite, writer);
         writer.close();
     }
 
     @GetMapping("/fullscript/{quantite}")
     public void genererFullscript(@PathVariable("quantite") int quantite) throws IOException {
-        BufferedWriter writer = new BufferedWriter(new FileWriter("data.sql", true));
+        BufferedWriter writer = new BufferedWriter(new FileWriter("/data/data.sql", true));
         generateAndWriteClients(quantite, writer);
         writer.append("\n");
         generateAndWriteProducts(quantite, writer);
@@ -39,7 +39,7 @@ public class GeneratorController {
 
     private void generateAndWriteClients(int quantite, BufferedWriter writer) throws IOException {
         List<Long> generatedClientIds = new ArrayList<>();
-        writer.append("insert into client (id, age, email, name) values ");
+        writer.append("insert into client (id, age, email, name, adresse) values ");
         for (int i = 0; i < quantite; i++) {
 
             ClientDTO clientDTO;
@@ -59,7 +59,7 @@ public class GeneratorController {
     private void generateAndWriteProducts(int quantite, BufferedWriter writer) throws IOException {
         List<Long> generatedIds = new ArrayList<>();
 
-        writer.append("insert into product (id, name, price) values ");
+        writer.append("insert into product (id, name, price, model) values ");
         for (int i = 0; i < quantite; i++) {
 
             ProductDTO productDTO;

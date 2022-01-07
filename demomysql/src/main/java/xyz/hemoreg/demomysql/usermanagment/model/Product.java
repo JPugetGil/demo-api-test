@@ -15,8 +15,9 @@ public class Product {
     private long id;
     private String name;
     private double price;
+    private String model;
 
     public ProductDTO toProductDTO() {
-        return new ProductDTO(id, name, price);
+        return new ProductDTO(id, name, price, model);
     }
 }

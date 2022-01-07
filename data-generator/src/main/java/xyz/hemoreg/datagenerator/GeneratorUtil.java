@@ -11,8 +11,9 @@ public class GeneratorUtil {
         long generatedId = faker.number().randomNumber();
         String generatedName = faker.funnyName().name().replace("'", "");
         double generatedPrice = faker.number().randomDouble(10, 1, 10 ^ 9);
+        String generatedModel = faker.animal().name().replace("'", "");
 
-        return new ProductDTO(generatedId, generatedName, generatedPrice);
+        return new ProductDTO(generatedId, generatedName, generatedPrice, generatedModel);
     }
 
     static ClientDTO generateClient() {
@@ -22,7 +23,8 @@ public class GeneratorUtil {
         String generatedName = faker.name().fullName().replace("'", "");
         String generatedEmail = faker.name().firstName().replace("'", "") + '@' + faker.name().lastName().replace("'", "") + ".test";
         int generatedAge = faker.number().numberBetween(1, 120);
+        String generatedAddress = faker.address().fullAddress().replace("'", "");
 
-        return new ClientDTO(generatedId, generatedName, generatedEmail, generatedAge);
+        return new ClientDTO(generatedId, generatedName, generatedEmail, generatedAge, generatedAddress);
     }
 }
