@@ -28,8 +28,8 @@ tags:
 #### Localhost
 - [Docker-compose file](../docker-compose.yml)
 
-#### Online
-- 1 GB / 10 GB Disk / FRANK1 - PostgreSQL 13
+#### Digital Ocean
+- 1 GB RAM / 1vCPU / 10 GB Disk / FRA1 - PostgreSQL 14
 
 ### Scala test
 - Install Scala [scala-sdk-3.1.0](https://www.scala-lang.org/download/scala3.html)

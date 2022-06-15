@@ -32,7 +32,9 @@
 ### VS Code ###
 **/.vscode/
 
-
 ### Docker ###
 demomysql/dataMySQL/
 demopostgresql/dataPostgreSQL/
+
+### Secrets ###
+**/src/main/application-prod.properties

@@ -1,4 +1,4 @@
-version: '3.9'
+version: '3'
 
 services:
   postgres:
@@ -11,12 +11,9 @@ services:
       POSTGRES_DB: db_postgres
     volumes:
       - ./demopostgresql/dataPostgreSQL:/var/lib/dataPostgreSQL
+      - ./data/1-postgres-relations.sql:/docker-entrypoint-initdb.d/1.sql
+      - ./data/50000-data.sql:/docker-entrypoint-initdb.d/2.sql
     restart: always
-    healthcheck:
-      test: [ "CMD-SHELL", "pg_isready -U postgres" ]
-      interval: 10s
-      timeout: 5s
-      retries: 5
 
   mysql:
     image: mysql:latest
@@ -30,6 +27,8 @@ services:
       MYSQL_ROOT_HOST: localhost
     volumes:
       - ./demomysql/dataMySQL:/var/lib/mysql
+      - ./data/1-mysql-relations.sql:/docker-entrypoint-initdb.d/1.sql
+      - ./data/50000-data.sql:/docker-entrypoint-initdb.d/2.sql
     restart: always
 
   data-generator:
@@ -43,8 +42,7 @@ services:
 
   demopostgres:
     depends_on:
-      postgres:
-        condition: service_healthy
+      - postgres
     build:
       context: ./demopostgresql
       dockerfile: Dockerfile
