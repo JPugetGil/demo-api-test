@@ -10,7 +10,7 @@ services:
       POSTGRES_PASSWORD: ThePassword
       POSTGRES_DB: db_postgres
     volumes:
-      - ./demopostgresql/dataPostgreSQL:/var/lib/dataPostgreSQL
+      - ./dataPostgreSQL:/var/lib/dataPostgreSQL
       - ./data/1-postgres-relations.sql:/docker-entrypoint-initdb.d/1.sql
       - ./data/50000-data.sql:/docker-entrypoint-initdb.d/2.sql
     restart: always
@@ -26,37 +26,10 @@ services:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_ROOT_HOST: localhost
     volumes:
-      - ./demomysql/dataMySQL:/var/lib/mysql
+      - ./dataMySQL:/var/lib/mysql
       - ./data/1-mysql-relations.sql:/docker-entrypoint-initdb.d/1.sql
       - ./data/50000-data.sql:/docker-entrypoint-initdb.d/2.sql
     restart: always
-
-  data-generator:
-    build:
-      context: ./data-generator
-      dockerfile: Dockerfile
-    ports:
-      - "8082:8082"
-    volumes:
-      - ./data:/data
-
-  demopostgres:
-    depends_on:
-      - postgres
-    build:
-      context: ./demopostgresql
-      dockerfile: Dockerfile
-    ports:
-      - "8081:8081"
-
-  demomysql:
-    depends_on:
-      - mysql
-    build:
-      context: ./demomysql
-      dockerfile: Dockerfile
-    ports:
-      - "8080:8080"
 
 volumes:
   data:
