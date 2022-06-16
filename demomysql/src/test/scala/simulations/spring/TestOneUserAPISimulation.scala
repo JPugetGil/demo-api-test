@@ -1,4 +1,4 @@
-package simulations
+package simulations.spring
 
 import io.gatling.core.Predef._
 import io.gatling.core.scenario.Simulation

@@ -1,4 +1,4 @@
-package xyz.hemoreg.demopostgresql.clientmanagment.controller;
+package xyz.hemoreg.demopostgresql.usermanagment.controller;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

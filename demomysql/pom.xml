@@ -20,7 +20,7 @@
 
 		<gatling.version>3.7.3</gatling.version>
 		<gatling-maven-plugin.version>3.1.2</gatling-maven-plugin.version>
-		<maven-jar-plugin.version>3.2.0</maven-jar-plugin.version>
+		<maven-jar-plugin.version>3.2.2</maven-jar-plugin.version>
 		<scala-maven-plugin.version>4.5.6</scala-maven-plugin.version>
 	</properties>
 
@@ -72,12 +72,18 @@
 			<artifactId>gatling-recorder</artifactId>
 			<version>${gatling.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>io.gatling</groupId>
+			<artifactId>gatling-jdbc</artifactId>
+			<version>${gatling.version}</version>
+		</dependency>
 	</dependencies>
 
 	<build>
 		<testSourceDirectory>src/test/scala</testSourceDirectory>
 		<plugins>
 			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
 				<version>${maven-jar-plugin.version}</version>
 			</plugin>
